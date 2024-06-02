@@ -1,0 +1,101 @@
+/* hover */
+.master-rooms .row .family-price-stars:hover,
+.master-rooms .row .price-stars:first-child:hover{
+    background-color: var(--yellow-color);
+}
+
+.master-rooms .row .family-price-stars:hover .stars svg,
+.master-rooms .row .family-price-stars:hover .per span,
+.master-rooms .row > .link-img:hover ~ .family-price-stars .stars svg,
+.master-rooms .row > .link-img:hover ~ .family-price-stars .per span,
+
+.master-rooms .row .price-stars:hover .stars svg,
+.master-rooms .row .price-stars:hover .per span,
+.master-rooms .row > .link-img:hover ~ .price-stars .stars svg,
+.master-rooms .row > .link-img:hover ~ .price-stars .per span{
+    color: white;
+}
+
+.master-rooms .row .family-price-stars:hover .price-text p .btn,
+.master-rooms .row > .link-img:hover ~ .family-price-stars p .btn,
+
+.master-rooms .row .price-stars:hover .price-text p .btn,
+.master-rooms .row > .link-img:hover ~ .price-stars p .btn{
+    background-color: white;
+    border: none;
+}
+.master-rooms .row .family-price-stars:hover .per:not(span)
+.master-rooms .row .price-stars:hover .per:not(span){
+    color: #000000;
+}
+/* hover for the arrow */
+
+.master-rooms .row .price-stars:hover::after{
+    border-color: transparent var(--yellow-color) transparent transparent;
+}
+.master-rooms .row .family-price-stars:hover::after{
+    border-color: transparent transparent transparent var(--yellow-color);
+}
+
+/* important codeee noteeeeeeeeeee */
+/* when hover on the link-img at the master-rooms, the background color of the prices-stars will be yellow */
+/* للفهم => If .link-img and .price-stars are adjacent siblings within the same .row and you want to change the background color of .price-stars when hovering over .link-img, you can use a general sibling combinator (~). */
+.master-rooms .row > .link-img:hover ~ .family-price-stars,
+.master-rooms .row > .link-img:hover ~ .price-stars {
+    background-color: var(--yellow-color);
+}
+
+/* .master-rooms .row > .link-img:hover ~ .family-price-stars::after, */
+.master-rooms .row > .link-img:hover ~ .price-stars::after {
+    border-color: transparent var(--yellow-color) transparent transparent;
+}
+
+/* end price-stars */
+
+/* family arrow */
+
+/* Hover for link-img affecting individual price-stars */
+.master-rooms .row > .link-img:hover + .price-stars {
+    background-color: var(--yellow-color);
+}
+
+
+/* =========== */
+#carouselExampleCaptions .carousel-indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -42px; /* 30px */
+}
+
+/* Make carousel indicators buttons circular */
+#carouselExampleCaptions .carousel-indicators button {
+    width: 14px;
+    height: 14px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin: 5px;
+    transition: all 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Style for the circle inside the button */
+#carouselExampleCaptions .carousel-indicators button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: transparent; /* Set the initial background color to transparent */
+    border: 1px solid #c6c6c6;
+    transition: all 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Change background color for the active indicator's circle */
+#carouselExampleCaptions .carousel-indicators .active::after {
+    background-color: #b3b3b3;
+}
